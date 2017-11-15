@@ -2,11 +2,17 @@
   "name": "workshop",
   "version": "0.1.0",
   "private": true,
-
+  "author": {
+    "name": "Ivo Pires",
+    "email": "ivopires.93@gmail.com",
+    "url": "https://github.com/Ivopires/WorkshopReact.git"
+  },
   "dependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-scripts": "1.0.14"
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-scripts": "^1.0.14",
+    "semantic-ui": "^2.2.13",
+    "semantic-ui-react": "^0.76.0"
   },
   "scripts": {
     "start": "react-scripts start",
