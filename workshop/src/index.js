@@ -1,14 +1,36 @@
 import React from 'react';
-import App from './components/App';
-import {createStore} from 'redux'
+import {AppContainer} from 'react-hot-loader';
 import {Provider} from 'react-redux'
-import {render} from 'react-dom'
-import todoApp from './reducers/todoApp'
+import {render} from 'react-dom';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
-let store = createStore(todoApp, window.STATE_FROM_SERVER)
+import store from './store/configureStore';
+import TodoApp from './containers/TodoApp';
 
-render(
-    <Provider store={store}>
-        <App />
-    </Provider>
-    ,document.getElementById('root'));
+injectTapEventPlugin();
+
+const rootEl = document.getElementById('root');
+
+render (
+    <AppContainer>
+        <Provider store={store}>
+            <TodoApp/>
+        </Provider>
+    </AppContainer>,
+    rootEl
+);
+
+if(module.hot){
+    module.hot.accept('./containers/TodoApp', () => {
+        const NextApp = require('./containers/TodoApp').default;
+
+        render(
+            <AppContainer>
+                <Provider store={store}>
+                    <NextApp/>
+                </Provider>
+            </AppContainer>,
+            document.getElementById('root')
+        );
+    });
+}

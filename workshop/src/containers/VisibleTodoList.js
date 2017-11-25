@@ -12,13 +12,13 @@ const getVisibleTodos = (todos, filter) => {
         case vf.SHOW_COMPLETED:
             return todos.filter(t => t.completed)
     }
-}
+};
 
 const mapStateToProps = state => {
     return {
         todos: getVisibleTodos(state.todos, state.visibilityFilter)
     }
-}
+};
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -26,11 +26,11 @@ const mapDispatchToProps = dispatch => {
             dispatch(toggleToDo(id))
         }
     }
-}
+};
 
 const VisibleTodoList = connect(
     mapStateToProps,
     mapDispatchToProps
-)(TodoList)
+)(TodoList);
 
 export default VisibleTodoList
