@@ -1,34 +1,17 @@
-import React from 'react'
-import {connect} from 'react-redux'
-import {addToDo} from '../actions/actions'
+import AddTodoForm from '../components/AddTodo'
 
-const AddTodo = ({dispatch}) => {
-    let input
+import { connect } from 'react-redux'
+import { addToDo } from '../actions/actions'
 
-    return (
-        <div>
-            <form
-                onSubmit={e => {
-                    e.preventDefault()
-                    if(!input.value.trim()){
-                        return
-                    }
-                    dispatch(addToDo(input.value))
-                    input.value = ''
-                }}
-            >
-
-                <input
-                ref={node => {
-                    input = node
-                }}/>
-
-                <button type='submit'>Add Todo</button>
-            </form>
-        </div>
-    )
+//Implement and send onSubmit callback as a prop to presentation component
+const mapDispatchToProp = (dispatch) => {
+    return {
+        onSubmit: (text) => {
+            dispatch(addToDo(text))
+        }
+    }
 }
 
-const Add_Todo = connect()(AddTodo)
-
-export default Add_Todo
+//Connect Redux to the Container and wrap "AddTodoForm" presentation component
+let AddTodo = connect(null, mapDispatchToProp)(AddTodoForm)
+export default AddTodo;

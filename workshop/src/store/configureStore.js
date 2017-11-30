@@ -1,5 +1,5 @@
-import {createStore, compose} from 'redux'
-import {persistStore} from 'redux-persist'
+import { createStore, compose } from 'redux'
+import { persistStore } from 'redux-persist'
 import reducers from '../reducers/todoApp'
 
 function configureStore() {

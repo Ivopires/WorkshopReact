@@ -1,13 +1,13 @@
-import types, {VisibilityFilters as vf} from "../actions/actionTypes";
+import types, { VisibilityFilters as vf } from "../actions/actionTypes";
 
-const visibilityFilter = (state=vf.SHOW_ALL, action) => {
-    switch(action.type){
+const visibilityFilter = (state = vf.SHOW_ALL, action) => {
+    switch (action.type) {
 
         case types.SET_VISIBILITY_FILTER:
             return action.filter
         default:
             return state
     }
-}
+};
 
-export default visibilityFilter
+export default visibilityFilter;

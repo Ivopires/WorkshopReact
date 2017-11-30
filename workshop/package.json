@@ -8,6 +8,7 @@
     "url": "https://github.com/Ivopires/WorkshopReact.git"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "material-ui": "^0.19.4",
     "prop-types": "^15.6.0",
     "react": "^16.1.1",

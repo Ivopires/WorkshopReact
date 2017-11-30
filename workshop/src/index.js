@@ -1,36 +1,20 @@
-import React from 'react';
-import {AppContainer} from 'react-hot-loader';
-import {Provider} from 'react-redux'
-import {render} from 'react-dom';
-import injectTapEventPlugin from 'react-tap-event-plugin';
+import 'babel-polyfill'
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import todoApp from './reducers/todoApp'
+import App from './components/App'
 
-import store from './store/configureStore';
-import TodoApp from './containers/TodoApp';
+function configureStore() {
+    const store = createStore(todoApp)
 
-injectTapEventPlugin();
-
-const rootEl = document.getElementById('root');
-
-render (
-    <AppContainer>
-        <Provider store={store}>
-            <TodoApp/>
-        </Provider>
-    </AppContainer>,
-    rootEl
-);
-
-if(module.hot){
-    module.hot.accept('./containers/TodoApp', () => {
-        const NextApp = require('./containers/TodoApp').default;
-
-        render(
-            <AppContainer>
-                <Provider store={store}>
-                    <NextApp/>
-                </Provider>
-            </AppContainer>,
-            document.getElementById('root')
-        );
-    });
+    return store;
 }
+
+render(
+    <Provider store={configureStore()}>
+        <App />
+    </Provider>,
+    document.getElementById('root')
+)
