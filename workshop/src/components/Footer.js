@@ -1,22 +1,26 @@
 import React from 'react'
 import FilterLink from '../containers/FilterLink'
+import { Button } from 'semantic-ui-react'
+import { VisibilityFilters as vf } from '../actions/actionTypes'
 
 const Footer = () => (
-    <p>
-        Show:
+    <div>
+        <label> Show:</label>
         {' '}
-        <FilterLink filter='SHOW_ALL'>
-            All
-        </FilterLink>
-        {', '}
-        <FilterLink filter='SHOW_ACTIVE'>
-            Active
-        </FilterLink>
-        {', '}
-        <FilterLink filter='SHOW_COMPLETED'>
-            Completed
-        </FilterLink>
-    </p>
+        <Button.Group size='mini'>
+            <FilterLink filter={vf.SHOW_ALL}>
+                All
+            </FilterLink>
+            <Button.Or />
+            <FilterLink filter={vf.SHOW_ACTIVE}>
+                Active
+            </FilterLink>
+            <Button.Or />
+            <FilterLink filter={vf.SHOW_COMPLETED}>
+                Completed
+            </FilterLink>
+        </Button.Group>
+    </div>
 )
 
 export default Footer;
