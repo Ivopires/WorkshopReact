@@ -3,12 +3,13 @@ import { PropTypes } from 'prop-types'
 import { Checkbox } from 'semantic-ui-react'
 
 import '../semantic/out/semantic.min.css'
+import './css/Todo.css'
 
 const Todo = ({ onClick, completed, text }) => (
-  <div className='item'>
+  <div className='item itens'>
 
     <Checkbox onClick={onClick} checked={completed} label={(
-      <label style={{ textDecoration: completed ? 'line-through' : 'none' }}>
+      <label id='todoLabel' style={{ textDecoration: completed ? 'line-through' : 'none' }}>
         {text}
       </label>
     )} />

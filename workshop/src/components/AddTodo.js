@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Button, Input } from 'semantic-ui-react'
 
-import '../css/AddTodo.css'
+import './css/AddTodo.css'
 
 let AddTodoForm = ({ onSubmit }) => {
   let input

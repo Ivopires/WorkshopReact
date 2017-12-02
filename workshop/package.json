@@ -22,7 +22,8 @@
     "redux-persist": "^5.4.0",
     "semantic-ui": "^2.2.13",
     "semantic-ui-css": "^2.2.12",
-    "semantic-ui-react": "^0.76.0"
+    "semantic-ui-react": "^0.76.0",
+    "standard": "^10.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -32,5 +33,7 @@
   },
   "devDependencies": {
     "redux-devtools": "^3.4.1"
-  }
+  },
+  "javascript.validate.enable": false,
+  "standard.enable": true
 }

@@ -1,0 +1,10 @@
+.itens{
+  max-width: 100%;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+#todoLabel {
+    margin-left: 1%;
+}
+

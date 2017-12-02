@@ -3,7 +3,7 @@ import { PropTypes } from 'prop-types'
 import { VisibilityFilters as vf } from "../actions/actionTypes";
 import Todo from './Todo'
 
-import 'semantic-ui-css/semantic.min.css'
+import '../semantic/out/semantic.min.css'
 
 const TodoList = ({ todos, onTodoClick }) => (
     <div className='ui middle aligned selection divided list'>
